@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Article">
+	<typeAlias alias="Article" type="it.itadinanta.web.db.ArticleBean" />
+	<typeAlias alias="ArticleQueryArgs" type="it.itadinanta.web.db.ArticleQueryArgs" />	
+	<!-- **************************************************************  -->
+	<!-- user map                                                        -->
+	<!-- **************************************************************  -->
+	<resultMap id="articleMap" class="Article">
+		<result property="id" column="id" />
+		<result property="language" column="language" />
+		<result property="kind" column="kind" />
+		<result property="author" column="author" />
+		<result property="title" column="title" />
+		<result property="body" column="body" />
+		<result property="created" column="created" />
+		<result property="lastModified" column="lastmodified" />
+	</resultMap>
+	<!-- **************************************************************  -->
+	<!-- finders                                                         -->
+	<!-- **************************************************************  -->
+	<select id="getById" resultMap="articleMap" parameterClass="java.lang.Integer">
+		SELECT * FROM articles WHERE id = #value#
+	</select>
+	<select id="getByDateRange" resultMap="articleMap" parameterClass="ArticleQueryArgs">
+		SELECT * FROM articles WHERE kind = #kind# and (#fromDate# IS NULL OR created &gt;= #fromDate#) 
+		(#toDate# IS NULL OR created &lt;= #toDate#)
+	</select>
+	<select id="getOldest" resultMap="articleMap" parameterClass="java.lang.Short">
+		SELECT * FROM articles where kind = #value# ORDER BY created ASC LIMIT 1
+	</select>
+	<!-- **************************************************************  -->
+	<!-- modifiers                                                       -->
+	<!-- **************************************************************  -->
+	<update id="update" parameterClass="Article">
+		UPDATE articles SET title = #title#, text = #text#, lastModified = now() WHERE id = #id#
+	</update>
+	<insert id="insert" parameterClass="Article">
+		<selectKey keyProperty="id">SELECT LAST_INSERT_ID() AS value</selectKey>
+		INSERT INTO articles (author, language, kind, title, text, lastmodified, created) VALUES (#author#, #language#,
+		#kind#, #title#, #text#, now(), now())
+	</insert>
+	<!-- **************************************************************  -->
+	<!-- delete                                                          -->
+	<!-- **************************************************************  -->
+	<delete id="delete" parameterClass="java.lang.Integer">DELETE FROM articles WHERE id = #value#</delete>
+</sqlMap>

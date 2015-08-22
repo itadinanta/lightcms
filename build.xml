@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<!-- ====================================================================== 
+     26-Mar-2006 13:55:58                                                        
+
+     project    
+     description
+                   
+     nigu                                                                
+     ====================================================================== -->
+<project name="project" default="build">
+    <description>
+Lightcms is a lightweight dynamic website runtime designed with 
+    	shared web hosting in mind.
+
+Goals:
+	- featherweight
+	- ease of serviceability
+	- ease of integration
+	- configuration flexibility
+	- no dependancies on the server side (no servlet container required)
+	- multiple site server
+	- ability to run as a standalone service or coupled to other http servers
+	- ability to run with no root privileges
+
+Requirements:
+	- jre 1.5.x (jdk 1.5.x and Apache Ant to build from source)
+    - that's it!
+    </description>
+
+    <!-- ================================= 
+          target: default              
+         ================================= -->
+    <target name="build" depends="core,modules" description="Builds lightcms">
+        
+    </target>
+
+	<path id="libraries">
+		<fileset dir="lib" includes="*.jar"/>
+	</path>
+	<path id="core">
+		<dirset dir="." includes="bin"/>
+	</path>
+    <!-- - - - - - - - - - - - - - - - - - 
+          target: depends                      
+         - - - - - - - - - - - - - - - - - -->
+    <target name="core" description="Builds core classes">
+    	<javac srcdir="src" destdir="bin">
+    		<classpath refid="libraries"/>
+    	</javac>
+    	<copy todir="bin">
+    		<fileset dir="src" includes="**/*.ftl"/>
+    	</copy>
+    </target>
+	
+	<target name="clean" description="Removes compiled files">
+		<delete>
+			<fileset dir=".">
+	   			<include name="bin/**/*.class"/>
+				<include name="modules/**/*.class"/>
+			</fileset>
+			<fileset dir="log">
+				<include name="*.log"/>
+			</fileset>
+		</delete>
+	</target>
+	
+	<target name="module_itadinanta" depends="core" description="Builds the itadinanta module">
+		<javac srcdir="modules/itadinanta/src" destdir="modules/itadinanta/bin">
+			<classpath refid="libraries"/>
+			<classpath refid="core"/>
+		</javac>
+	</target>
+	<target name="module_dot" depends="core" description="Builds the dot website">
+<!--
+		<javac srcdir="modules/dot/src" destdir="modules/dot/bin">
+			<classpath refid="libraries"/>
+			<classpath refid="core"/>
+		</javac>
+-->
+	</target>
+	<target name="module_radix" depends="core" description="Builds the Radix website">
+		<javac srcdir="modules/radix/src" destdir="modules/radix/bin">
+			<classpath refid="libraries"/>
+			<classpath refid="core"/>
+		</javac>
+	</target>
+	<target name="modules" depends="module_itadinanta, module_dot, module_radix" description="Builds site modules">
+	</target>
+	
+	<target name="package" depends="build" description="Builds a zip distribution file including source and binary">
+		<zip destfile="../lightcms.zip">
+			<fileset dir="."/>
+		</zip>
+	</target>
+
+</project>
+

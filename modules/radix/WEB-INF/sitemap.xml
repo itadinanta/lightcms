@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<menu default="main">
+	<entry name="main" url="/main/index"/>
+	<entry name="contact" url="/main/contact"/>
+	<entry name="cv" url="/main/cv"/>
+	<entry name="blog" url="/blog/cv"/>	
+</menu>

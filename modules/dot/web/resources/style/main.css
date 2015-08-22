@@ -1,0 +1,175 @@
+HTML
+	{font-size: 16pt; font-weight:normal}
+BODY.screen  
+	{background-color: #f0f5ff; font-family: "Verdana","Arial","helvetica", sans-serif; border: 0px; margin: 0px; padding: 10px}
+BODY.printer
+	{background-color: white; font-family:  "Verdana","Arial","helvetica", sans-serif}
+P
+	{font-family: Verdana,Arial,helvetica, sans-serif; font-size: 14pt}
+LI
+	{font-family: Verdana,Arial,helvetica, sans-serif;  font-size: 14pt}
+TD
+	{vertical-align: top}
+TD.upcenter
+	{padding: 0.5em; background-color: #f0fff0; border-style: solid solid solid solid; border-width: 1px}
+TD.gallery
+	{text-align: center; vertical-align: bottom; font-size:10pt}
+TD.table
+	{align: center}
+TD.pagetop
+	{background-color: #6f6c60; color: black; text-align: center}
+TD.headingmenu
+	{border-style: solid solid none solid; border-width: 1px; border-color: #101020; background-color: white; color: black; text-align: right}
+TD.heading
+	{padding-top: 10px; border-style: solid solid none solid; border-width: 1px; border-color: #101010; background-color: white; color: black; text-align: center}
+TD.statusbar
+	{border-style: solid solid solid solid; border-width: 1px; border-color: #101020; background-color: white; text-align: right; font-size: 10px}
+TD.pagebottom
+	{background-color: white; color: white; text-align: center}
+TD#left.pagebottom
+	{text-align: left}
+TD#right.pagebottom
+	{text-align: right}
+TABLE.menubar
+	{text-align: right}
+TABLE.maintable
+	{border-style:none; border-width: 1px; border-color: #101020; margin-top:10px; margin-bottom:10px}
+TD.menubar
+	{border-width: 1px; border-style: none; text-align: right}
+TD.upright
+	{text-align: right; vertical-align:top}
+TD.upleft
+	{border-width: 1px; border-style: none solid none solid; border-color: #101020; text-align: center; vertical-align:middle; background-color:white}
+TABLE.FORM TD#TITLE
+	{border-width: 1px; border-style: none; border-color: #101020}
+TD.menubarroot
+	{font-size: 12px; font-weight:bold; border-style: solid; border-width: 1px;
+	padding-left: 0.5em; padding-right: 0.5em; padding-top: 1px; padding-bottom: 1px}
+TD.menubaritem
+	{font-size: 12px; border-style: none; border-width: 1px;
+	padding-left: 0.5em; padding-right: 0.5em; padding-top: 1px;
+	padding-bottom: 1px}
+TD.menubarsep
+	{font-size: 12px; border-style: none; border-width: 1px;
+	padding-left: 0em; padding-right: 0em; padding-top: 1px;
+	padding-bottom: 1px}
+TD.menubarnav
+	{font-size: 12px; border-style: none; border-width: 1px;
+	padding-left: 0.5em; padding-right: 0.5em; padding-top: 1px;
+	padding-bottom: 1px}
+
+#mark2
+	{background-color: #f8f0ec; border-width:1px; border-style: dotted; border-color: #310}
+#mark1
+	{background-color: #f8f4f0; border-width:1px; border-style: solid; border-color: #f8f4f0}
+#mark
+	{background-color: white; border-width:1px; border-style: solid; border-color: white}
+TD.label
+	{background-color: #f0f0f0; text-align:right; vertical-align: middle}
+TD.input
+	{background-color: #f0f0f0; vertical-align: middle}
+TD.blank
+	{background-color: #f0f0f0}
+TD.select
+	{background-color: #f0f0f0; vertical-align: middle}
+TD.pagestatusbar
+	{background-color: #f0f0f0; text-weight:bold; align: right}
+IMG.ptr
+	{border: 0px; border-style: none; padding: 0px; margin: 0px; vertical-align: middle}
+
+INPUT
+	{background-color: #f0fff0; font-family: "Courier New", Courier, monospaced; 
+	font-weight: bold; font-size: 12px; border: 1px; border-style: none none solid none; border-color: black}
+TEXTAREA
+	{background-color: #f0fff0; font-family: "Courier New", Courier, monospaced; 
+	font-weight: bold; font-size: 12px; border: 1px; border-style: none none none solid; border-color: black}
+INPUT.button
+	{background-color: #ff8080; border-style: solid none solid none; font-family: "Bookman", serif}
+SELECT.select
+	{background-color: #f0fff0; font-family: "Courier New", Courier, monospaced;
+	font-weight: bold;font-size: 12px; border: 1px; border-style: none none solid none; border-color: black}
+A:visited
+	{color: #420; text-decoration: none}
+A:link
+	{color: #210; text-decoration: none}
+A:hover
+	{color: #c44; text-decoration: none}
+A.text
+	{font-weight: bold}
+TD.buttonbar
+	{text-align: right; background-color: white}
+TD.formtitle1
+	{color: black; background-color:white; font-size:16px; font-weight:bold;
+	border-style: solid none solid none; border-width: 1px; border-color: black}
+TD.formtitle2
+	{color: black; background-color:white; font-size:14px; font-weight:bold}
+TD.statictext
+	{font-weight: bold; background-color: #f0f0f0; vertical-align: middle}
+TR.dochead TD, TD.dochead
+	{color: black; background-color:white; font-size:14px; font-weight:bold;
+	border-style: solid none solid none; border-width: 1px; border-color: black}
+TR.docrow TD, TD.docrow
+	{color: black; background-color:#f0f0f0}
+TD#money
+	{text-align: right}
+TR.docfoot TD, TD.docfoot
+	{color: darkred; background-color:white; font-size:14px; font-weight:bold;
+	border-style: solid none solid none; border-width: 1px; border-color: black}
+DIV.paragraph 
+	{text-align: justify; padding-left: 1em; padding-right: 1em}
+DIV.dt 
+	{text-align: left;font-family: "Courier New", "Courier", fixed;
+	margin-bottom: 5px; margin-left: 2em; padding-left: 1em;
+	margin-right: 2em; padding-right: 1em; background-color: #f8f4f0; 
+	border-style: solid;border-color: #643;border-width: 1px}
+DIV.formula 
+	{text-align: center;font-family: "Courier New", "Courier", fixed;
+	border-style: solid solid;border-color: #643;border-width: 2px 0px 2px 0px}
+DIV.esempio 
+	{font-style: italic;border-width: 1px;border-style: solid;
+	margin-left: 2em; margin-right:2em; padding-left:1em;
+	padding-right: 1em; padding-bottom: 5pt}
+DIV.center 
+	{text-align: center}
+.bar1
+	{text-align: left; padding-left: 0.5em; font-size: 12pt; font-weight: bold; text-color: #310}
+.bar2
+	{text-align: left; padding-left: 1em; font-size: 10pt; font-weight: bold; text-color: #521}
+.bar3
+	{text-align: left; padding-left: 2em; font-size: 10pt; font-weight: normal; text-color: #643}
+.bar4
+	{text-align: left; padding-left: 3em; font-size: 9pt; font-weight: normal; text-color: #643}
+.bar5
+	{text-align: left; padding-left: 4em; font-size: 9pt; font-weight: normal; text-color: #643}
+IMG 
+	{border: 0 0 0 0}
+H4 
+	{font-size: 14pt;font-weight: bold;color:#421}
+H3 
+	{text-align: center;font-size: 16pt;color: #310;font-style: italic;font-weight: normal}
+H2 
+	{text-align: center;font-size: 20pt;font-style: italic;font-weight: normal}
+H1
+	{font-family: Verdana,Arial,sans-serif; text-align: left;font-size: 24pt; font-weight: bold; padding-bottom: 0px; padding-top: 0px}
+TH 
+	{background: black;color: white}
+P 
+	{text-align: justify;padding-right: 2em;padding-left: 2em}
+DIV.racc 
+	{font-style: italic;text-align: justify;padding: 1em}
+LI 
+	{padding-right: 2em}
+TABLE.spelltable 
+	{border-color: black; border-width: 1px; border-style: solid}
+.dh
+	{border-style: solid solid none solid; border-width:1px}
+.db
+	{border-style: none solid solid solid; border-width:1px}
+TD.credits
+	{text-align: center; padding-bottom: 1em}
+TD.txtbody
+	{border-color: #101020; background-color: white; border-width: 2px; border-style: solid solid solid solid; margin: 0px; padding: 0px}
+TD.sidebar
+	{height: 200px; border-style: none solid solid solid; border-width: 1px; width: 100px; background-color: white; text-align: center}
+TD.sidespacer
+	{border-color: #101020; border-style: none solid none solid; border-width: 1px; width: 100px; background-color: white}

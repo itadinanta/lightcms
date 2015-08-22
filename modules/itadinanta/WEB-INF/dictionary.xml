@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<dictionary>
+	<entry key="T_HOME">
+		<text language="it">Home</text>
+		<text language="en">Home</text>
+	</entry>
+	<entry key="T_ADMIN">
+		<text language="it">Impostazioni</text>
+		<text language="en">Admin</text>
+	</entry>
+	<entry key="T_LINKS">
+		<text language="it">Links</text>
+		<text language="en">Links</text>
+	</entry>
+	<entry key="T_ARTWORK">
+		<text language="it">Artwork</text>
+		<text language="en">Artwork</text>
+	</entry>
+	<entry key="T_RECIPES">
+		<text language="it">Ricette</text>
+		<text language="en">Recipes</text>
+	</entry>
+	<entry key="T_PROJECTS">
+		<text language="it">Progetti</text>
+		<text language="en">Projects</text>
+	</entry>
+	<entry key="T_CV">
+		<text language="it">Curriculum Vitae</text>
+		<text language="en">Curriculum Vitae</text>
+	</entry>
+	<entry key="T_CONTACT">
+		<text language="it">Contatti</text>
+		<text language="en">Contact</text>
+	</entry>
+	<entry key="T_ERROR">
+		<text language="it">Pagina non trovata</text>
+		<text language="en">Page not found</text>
+	</entry>
+	<entry key="T_ITADINANTA">
+		<text language="it">Itadinanta</text>
+		<text language="en">Itadinanta</text>
+	</entry>
+	<entry key="T_BLOG">
+		<text language="it">Blog</text>
+		<text language="en">Blog</text>
+	</entry>
+	<entry key="T_ARCHIVE">
+		<text language="it">Archivio</text>
+		<text language="en">Archive</text>
+	</entry>
+	<entry key="T_NEW_POST">
+		<text language="it">Nuovo articolo</text>
+		<text language="en">New post</text>
+	</entry>
+	<entry key="T_EDIT">
+		<text language="it">Modifica</text>
+		<text language="en">Edit</text>
+	</entry>
+	<entry key="M_NAVPREV">
+		<text language="it">Precedente: </text>
+		<text language="en">Previous: </text>
+	</entry>	
+	<entry key="M_NAVUP">
+		<text language="it">Su:</text>
+		<text language="en">Up:</text>
+	</entry>	
+	<entry key="M_NAVNEXT">
+		<text language="it">Successivo:</text>
+		<text language="en">Next:</text>
+	</entry>
+	<entry key="M_MISSION">
+		<text language="it">Itadinanta.it - Il Webspace di Nicola Orr&#x00FA;</text>
+		<text language="en">Itadinanta.it - Nicola Orr&#x00FA;'s Webspace</text>
+	</entry>
+	<entry key="M_SUBMIT">
+		<text language="it">Invia</text>
+		<text language="en">Submit</text>
+	</entry>
+</dictionary>

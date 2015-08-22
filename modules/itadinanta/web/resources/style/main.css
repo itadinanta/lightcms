@@ -1,0 +1,187 @@
+body {
+	font-family: Helvetica, Verdana, Arial, sans-serif;
+	font-size: 0.9em;
+	margin: 0;
+	border: 0;
+}
+
+ul {
+	margin: 0px 0px 0px 0px;
+}
+
+a {
+	color: #1e1028;
+	text-decoration: none;
+	font-style: italic;
+}
+
+a:visited {
+	color: #381e4c;
+}
+
+.navlink {
+	border-width: 0px 5px 0px 5px;
+	border-color: #e2e2e2;
+	border-style: solid;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+span.navlink {
+	background-color: #f6a553;
+}
+
+a.navlink:hover {
+	border-width: 0px 5px 0px 5px;
+	border-style: solid;
+	border-color: #697296;
+}
+
+a:hover {
+	background-color: #381e4c;
+	color: white;
+}
+
+li {
+	margin-right: 5em;
+	margin-bottom: 0.5em;
+}
+
+ul.navtree {
+	list-style-type: none;
+	padding: 10px 0px 10px 0px;
+}
+
+ul.navtree li .navlink {
+	display: block;
+}
+
+div#navtree li {
+	margin: 0;
+}
+
+li.navtree_0, li.navtree_1, li.navtree_2 {
+	width:150px;
+}
+
+li.navtree_0 a, li.navtree_0 span {
+	font-weight: bold;
+	padding-left:10px;
+}
+
+li.navtree_1 a, li.navtree_1 span {
+	padding-left:20px;
+}
+
+li.navtree_2 a, li.navtree_2 span  {
+	padding-left:30px;
+	font-size: 0.8em;
+}
+
+div#page {
+	width: auto;
+}
+
+div#navtree {
+	float: left;
+	padding: 0px 10px 0px 10px;
+	margin: 0px 0px 0px 0px;
+}
+
+div#body {
+	margin: 0;
+	padding: 0;
+	clear: both;
+}
+
+div#text {
+	width: auto;
+	float: left;
+	text-align: justify;
+	max-width: 800px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+div#navprev {
+	width: 33%;	
+	float: left;
+	text-align: left;
+	font-size: 0.8em;
+}
+
+div#navup {
+	width: 34%;
+	float: left;
+	text-align: center;
+	font-size: 0.8em;
+}
+
+div#navnext {
+	width: 33%;	
+	float: right;
+	text-align: right;
+	font-size: 0.8em;
+}
+
+div#navlevel {
+	float: left;
+	font-size: 0.8em;
+}
+
+div#navcrumbs {
+	float: right;
+	font-size: 0.8em;
+}
+
+div#navcompass, div#navtracer {
+	width: auto;
+	height: 1em;
+	background-color: white;
+	border-width: 1px;
+	border-color: #797677;
+	padding-left: 10px;
+	padding-right: 10px;	
+	clear: both;
+}
+
+div#navcompass {
+	border-style: none none solid none;
+}
+
+div#navtracer {
+	border-style: solid none none none;
+}
+
+div#mission {
+	width: auto;
+	text-align: center;	
+	color: #797677;
+}
+
+div#header {
+	width: auto;
+	background-color: #e2e2e2;
+	border-style: solid none solid none;
+	border-color: #d6d6d3;
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+	border-width: 1px
+}
+
+div#title {
+	width: auto;
+	padding: 0;
+	margin: 0;
+}
+
+
+h1 {
+	padding: 5px 10px 5px 10px;
+	margin: 0px 0px 0px 0px;
+}
+
+p {
+	text-indent: 2em;
+	margin-bottom: 1em;
+}

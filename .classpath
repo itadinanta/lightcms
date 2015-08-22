@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="modules/itadinanta/src"/>
+	<classpathentry kind="src" path="test"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/dom4j-1.6.1.jar"/>
+	<classpathentry sourcepath="/home/nigu/java/spring-framework-1.2.7/src" kind="lib" path="lib/javax.servlet.jar"/>
+	<classpathentry sourcepath="/home/nigu/java/jetty-5.1.10/src" kind="lib" path="lib/org.mortbay.jetty.jar">
+		<attributes>
+			<attribute value="file:/home/nigu/java/jetty-5.1.10/javadoc/" name="javadoc_location"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/org.mortbay.jmx.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging.jar"/>
+	<classpathentry sourcepath="/home/nigu/java/freemarker-2.3.5/src" kind="lib" path="lib/freemarker.jar"/>
+	<classpathentry kind="lib" path="lib/log4j-1.2.13.jar"/>
+	<classpathentry sourcepath="ECLIPSE_HOME/plugins/org.eclipse.jdt.source_3.0.0/src/org.junit_3.8.1/junitsrc.zip" kind="var" path="JUNIT_HOME/junit.jar"/>
+	<classpathentry sourcepath="/home/nigu/java/iBatis/src/ibatis-src.zip" kind="lib" path="lib/ibatis-common-2.jar"/>
+	<classpathentry kind="lib" path="lib/ibatis-sqlmap-2.jar"/>
+	<classpathentry kind="lib" path="lib/ibatis-dao-2.jar"/>
+	<classpathentry kind="lib" path="lib/commons-dbcp-1.2.1.jar"/>
+	<classpathentry kind="lib" path="lib/commons-pool-1.2.jar"/>
+	<classpathentry sourcepath="/home/nigu/java/spring-framework-1.2.7/src" kind="lib" path="lib/spring.jar">
+		<attributes>
+			<attribute value="file:/home/nigu/java/spring-framework-1.2.7/docs/api/" name="javadoc_location"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/mysql-connector-java-3.1.12-bin.jar"/>
+	<classpathentry kind="lib" path="lib/commons-collections-3.1.jar"/>
+	<classpathentry kind="src" path="modules/radix/src"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

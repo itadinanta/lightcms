@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<menu default="main">
+	<defaults title="T_ITADINANTA" method="doDefault" handler="it.itadinanta.web.commands.BaseCommand" view="skeleton" />
+	<error title="T_ERROR" body="pages/%l/error" />
+	<node name="main" url="/" title="T_HOME" body="pages/%l/home">
+		<node name="blog" url="/blog" title="T_BLOG" method="$" handler="it.itadinanta.web.commands.BlogCommand"
+			body="pages/blog">
+			<node name="blogArchive" url="/blog/archive" title="T_ARCHIVE" body="pages/blog/archive" />
+			<node name="blogNewPost" url="/blog/newPost" title="T_NEW_POST" body="pages/blog/edit" clearance="2" />
+			<node name="blogEditPost" url="/blog/editPost" title="T_EDIT" body="pages/blog/edit" clearance="2" />
+		</node>
+		<node name="artwork" url="/artwork" title="T_ARTWORK" body="pages/artwork">
+			<node name="recipes" url="/recipes" title="T_RECIPES" body="pages/recipes" />
+			<node name="projects" url="/projects" title="T_PROJECTS" body="pages/projects" />
+		</node>
+		<node name="links" url="/links" title="T_LINKS" body="pages/links" />
+		<node name="cv" url="/cv" title="T_CV" body="pages/cv" />
+		<node name="contact" url="/contact" title="T_CONTACT" body="pages/contact" />
+		<node name="admin" url="/admin" title="T_ADMIN" clearance="3" body="pages/admin" />
+	</node>
+</menu>

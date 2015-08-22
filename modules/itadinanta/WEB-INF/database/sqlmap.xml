@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMapConfig      PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"      "http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+<sqlMapConfig>
+	<!-- These settings control SqlMap configuration details, primarily to do with transaction		
+		management.  They are all optional (see the Developer Guide for more).  -->
+	<settings cacheModelsEnabled="true" enhancementEnabled="true" lazyLoadingEnabled="true" maxRequests="32"
+		maxSessions="10" maxTransactions="5" useStatementNamespaces="true" />
+	<sqlMap resource="WEB-INF/database/user.xml" />
+	<sqlMap resource="WEB-INF/database/article.xml" />
+</sqlMapConfig>

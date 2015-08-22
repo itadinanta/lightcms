@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<dictionary>
+	<entry key="test1">
+		<text language="it">Messaggio di prova in italiano</text>
+		<text language="en">English test message</text>
+	</entry>
+	<entry key="format1">
+		<text language="it">Messaggio formattato in italiano valore={0}</text>
+		<text language="en">English formatted message value={0}</text>
+	</entry>	
+</dictionary>

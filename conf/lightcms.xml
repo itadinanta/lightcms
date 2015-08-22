@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<bean id="httpListener" class="org.mortbay.http.SocketListener">
+		<property name="port" value="8080"/>		
+	</bean>
+
+	<bean id="ajp13Listener" class="org.mortbay.http.ajp.AJP13Listener">
+		<property name="port" value="8009"/>
+	</bean>
+	
+	<bean id="server" class="org.mortbay.jetty.Server"/>
+	
+	<bean id="cmsServer" class="it.itadinanta.lightcms.JettyCmsServer">
+		<property name="server" ref="server"/>
+		<property name="servletMapping" value="/*"/>
+		<property name="servletClass" value="it.itadinanta.lightcms.CmsServlet"/>
+		<property name="modules">
+			<list>
+				<value>itadinanta</value>
+				<value>radix</value>
+				<value>dot</value>
+			</list>	
+		</property>
+		<property name="listeners">
+			<list>
+				<ref bean="httpListener"/>
+				<ref bean="ajp13Listener"/>			
+			</list>
+		</property>
+	</bean>
+</beans>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="resourceChangeManager" class="it.itadinanta.changemonitor.ResourceChangeMonitor" init-method="start"
+		destroy-method="stop">
+		<property name="interval" value="2000" />
+	</bean>
+	<bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+		<property name="configLocation" value="/conf/freemarker.properties" />
+		<property name="templateLoaderPaths" value="/templates,classpath:/" />
+	</bean>
+	<bean id="sitemap" class="it.itadinanta.lightcms.toolkit.sitemap.XmlSitemap">
+		<property name="configLocation" value="/conf/sitemap.xml" />
+	</bean>
+	<bean id="toolkit" class="it.itadinanta.lightcms.toolkit.Toolkit">
+		<property name="sitemap" ref="sitemap" />
+	</bean>
+	<bean id="baseController" class="it.itadinanta.lightcms.controllers.BaseController">
+		<property name="commandClass" value="it.itadinanta.lightcms.commands.BaseCommand" />
+		<property name="toolkit" ref="toolkit" />
+		<property name="defaultView" value="skeleton" />
+	</bean>
+	<bean id="mainController" parent="baseController" class="it.itadinanta.web.controllers.MainController">
+		<property name="commandClass" value="it.itadinanta.web.commands.MainCommand" />
+	</bean>
+	<bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<props>
+				<prop key="/*">mainController</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+		<property name="viewClass">
+			<value>org.springframework.web.servlet.view.freemarker.FreeMarkerView</value>
+		</property>
+		<property name="suffix">
+			<value>.ftl</value>
+		</property>
+	</bean>
+</beans>

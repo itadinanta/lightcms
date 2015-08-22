@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="resourceChangeManager" class="it.itadinanta.changemonitor.ResourceChangeManager" init-method="start"
+		destroy-method="stop">
+		<property name="interval" value="2000" />
+	</bean>
+	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
+		<property name="cookieName" value="clientlanguage" />
+		<property name="cookieMaxAge" value="100000" />
+	</bean>
+	<bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+		<property name="templateLoaderPaths" value="/web/templates,classpath:/,classpath:/it/itadinanta/lightcms/templates" />
+		<property name="configLocation" value="/WEB-INF/freemarker.properties" />
+	</bean>
+	<bean id="sitemap" class="it.itadinanta.lightcms.toolkit.sitemap.XmlSitemap" init-method="init"
+		destroy-method="close">
+		<property name="resourceChangeManager" ref="resourceChangeManager" />
+		<property name="configLocation" value="/WEB-INF/sitemap.xml" />
+	</bean>
+	<bean id="messageSource" class="it.itadinanta.lightcms.toolkit.dictionary.XmlMessageSource" init-method="init"
+		destroy-method="close">
+		<property name="resourceChangeManager" ref="resourceChangeManager" />
+		<property name="configLocation" value="/WEB-INF/dictionary.xml" />
+	</bean>
+	<bean id="dictionary" class="it.itadinanta.lightcms.toolkit.dictionary.MessageSourceDictionary">
+		<property name="messageSource" ref="messageSource" />
+	</bean>
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/itadinanta" />
+		<property name="username" value="itadinanta" />
+		<property name="password" value="itadinanta" />
+	</bean>
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	<bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+		<property name="configLocation" value="/WEB-INF/database/sqlmap.xml" />
+		<property name="useTransactionAwareDataSource" value="true" />
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	<bean id="sqlMapClientTemplate" class="org.springframework.orm.ibatis.SqlMapClientTemplate">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+	<bean id="userDao" class="it.itadinanta.db.dao.UserDaoSqlMapClient">
+		<property name="sqlMapClientTemplate" ref="sqlMapClientTemplate" />
+	</bean>
+	<bean id="authService" class="it.itadinanta.db.auth.SqlMapAuthService">
+		<property name="userDao" ref="userDao" />
+	</bean>
+	<bean id="toolkit" class="it.itadinanta.lightcms.toolkit.Toolkit">
+		<property name="sitemap" ref="sitemap" />
+		<property name="dictionary" ref="dictionary" />
+		<property name="module" value="itadinanta" />
+	</bean>
+	<bean id="baseController" class="it.itadinanta.lightcms.controllers.ToolkitAccessController">
+		<property name="toolkit" ref="toolkit" />
+		<property name="authService" ref="authService" />
+	</bean>
+	<bean id="localeChangeInterceptor" class="it.itadinanta.lightcms.interceptors.LocaleInterceptor">
+		<property name="defaultLocale" value="it"/>
+		<property name="allowedLocales">
+			<set>
+				<value type="java.util.Locale">it</value>
+				<value type="java.util.Locale">en</value>
+			</set>
+		</property>
+		<property name="dictionary" ref="dictionary"/>
+		<property name="paramName" value="lang" />		
+	</bean>
+	<bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="interceptors">
+			<list>
+				<ref bean="localeChangeInterceptor" />
+			</list>
+		</property>
+		<property name="mappings">
+			<props>
+				<prop key="/*">baseController</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+		<property name="viewClass" value="org.springframework.web.servlet.view.freemarker.FreeMarkerView" />
+		<property name="suffix" value=".ftl" />
+	</bean>
+</beans>

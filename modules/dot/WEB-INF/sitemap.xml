@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<menu default="main">
+	<defaults title="T_ITADINANTA" method="doDefault" handler="it.itadinanta.lightcms.commands.BaseCommand" view="skeleton" />
+	<error title="T_ERROR" body="pages/error.ftl" />
+	<node name="main" url="/" title="T_HOME" body="pages/home.ftl">
+		<node name="artwork" url="/artwork" title="T_ARTWORK" body="pages/artwork.ftl">
+			<node name="recipes" url="/recipes" title="T_RECIPES" body="pages/recipes.ftl" />
+			<node name="projects" url="/projects" title="T_PROJECTS" body="pages/projects.ftl" />
+		</node>
+		<node name="links" url="/links" title="T_LINKS" body="pages/links.ftl" />
+		<node name="cv" url="/cv" title="T_CV" body="pages/cv.ftl" />
+		<node name="contact" url="/contact" title="T_CONTACT" body="pages/contact.ftl" />
+	</node>
+</menu>
